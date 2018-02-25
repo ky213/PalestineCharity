@@ -6,7 +6,6 @@
 
 body{
     margin:0;
-    width:100%;
 }
 
 input{
@@ -22,22 +21,23 @@ a{
 
 #top-bar{
     display:flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 100%;
     background: #F3F3F3;
     font-size: 10px;
     color: gray;
-    padding:10px 5px;
+}
+
+#top-bar > *{
+    margin:0px 10px;
+    display: flex;
+    align-items: center;
 }
 
 #contact{
-    display: flex;
-    justify-content: space-between;
-}
-#contact div{
-    text-align: center;
-    margin:0px 10px;
-    
+    justify-content: space-around;
+    width:25%;
 }
 
 #donate-button{
@@ -54,10 +54,10 @@ a{
     background: #2867de;
 }
 
-#search{
-    width:30%;
+#search{  
+    width:25%;
     height: 15px;
-    display:flex;
+    margin: auto 50px
 }
 
 #search-button{
@@ -75,17 +75,61 @@ a{
     font-size: 1.2em;
 }
 
-
 #actions{
     display:flex;
+    align-items: center;
+    width: 25%;
 }
 
 #actions div{
     padding:0px 5px;
 }
 
-#languages{
+#language, #currency{
+    position: relative;
+    height: 50px;
     display: flex;
+    align-items: center
+}
+
+#language ul, #currency ul{
+    display: none; 
+    position: absolute;
+    top: 35px;
+    padding: 0;
+    margin-left: 8px;
+    width: 50px;
+    box-shadow: 0 0 10px  lightblue;
+}
+
+#language span, #currency span{
+    padding: 3px;
+}
+
+#language li, #currency li{
+  list-style-type: none;
+  padding: 3px 5px;
+  text-align: center;
+}
+
+#language li:first-child, #currency li:first-child{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.198);
+}
+
+#language li:hover, #currency li:hover{
+    background: rgba(128, 128, 128, 0.198);
+  }
+
+#language > div,
+#language > div{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#language:hover ul,
+#currency:hover ul{
+    display: block;
 }
 
 #social a{
@@ -115,7 +159,7 @@ a{
     justify-content: flex-start;
     align-items: center;
     width:80%;
-    max-height: 100px;
+    height: 75px;
     margin: auto;
 }
 
@@ -131,15 +175,19 @@ a{
     display: flex;
     flex:1;
     align-items: center;
+    height: 100%;
 }
 
 #navigation li{
-    list-style-type: none;
+    display: flex;
+    align-items: center;
     padding:2px 10px;
     font-size: .8em;
+    height: 100%;
 }
 
 #navigation li a {
+    display: block;
     color: grey;
  }
 
@@ -165,7 +213,7 @@ a{
 
  #bag{
     position: absolute;
-    top:-17px;
-    left:40px;
+    top:10px;
+    left:28px;
     z-index: -1;
 }
