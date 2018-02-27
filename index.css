@@ -1,6 +1,7 @@
 /* Global */
 *{
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 } 
 
@@ -28,8 +29,12 @@ a{
 /* top bar */
 
 #top-bar{
+    display:-webkit-box;
+    display:-ms-flexbox;
     display:flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 45px;
     width: 100%;
     background: #F3F3F3;
@@ -39,12 +44,17 @@ a{
 
 #top-bar > *{
     margin:0px 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 #contact{
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     width:25%;
 }
 
@@ -85,17 +95,27 @@ a{
 }
 
 #actions{
+    display:-webkit-box;
+    display:-ms-flexbox;
     display:flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 25%;
 }
 
 #language, #currency{
     position: relative;
     height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center
 }
 
 #language ul, #currency ul{
@@ -104,7 +124,8 @@ a{
     top: 30px;
     margin-left: 8px;
     width: 50px;
-    box-shadow: 0 0 5px  lightblue;
+    -webkit-box-shadow: 0 0 5px  lightblue;
+            box-shadow: 0 0 5px  lightblue;
 }
 
 #language span, #currency span{
@@ -127,8 +148,12 @@ a{
 
 #language > div{
     height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 #language:hover ul,
@@ -159,9 +184,15 @@ a{
 /*Main Menu */
 
 #main-menu{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width:80%;
     height: 90px;
     margin: auto;
@@ -176,16 +207,26 @@ a{
 }
 
 #navigation{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex:1;
-    align-items: center;
+    -webkit-box-flex:1;
+        -ms-flex:1;
+            flex:1;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 100%;
     margin-left:30px; 
 }
 
 #navigation > li{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding:0px 20px;
     height: 100%;
 }
@@ -233,7 +274,7 @@ a{
     top:90px;
     left:0;
     width:200px;
-    z-index: 1;
+    z-index: 10;
 }
 
 .menu-item:hover > ul{
@@ -249,20 +290,20 @@ a{
 }
 
 .menu-sub-item:hover{
-    background:rgba(128, 128, 128, 0.13);
+    background:black;
 }
 
 .menu-sub-item > a{
     width: 100%;
+    height: 100%;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
     display: flex !important;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     color: lightskyblue;
 } 
-
-.menu-sub-item > a span{
-
-    margin-left: auto;
-}
 
 .menu-sub-item:not(:last-child){
     border-bottom: 1px solid rgba(128, 128, 128, 0.171);
@@ -274,7 +315,8 @@ a{
     top:0;
     left:200px;
     width: 200px;
-    box-shadow: -2px 0px 5px lightblue;
+    -webkit-box-shadow: -2px 0px 5px lightblue;
+            box-shadow: -2px 0px 5px lightblue;
     z-index: 2;
 }
 
@@ -290,9 +332,139 @@ a{
 }
 
 .menu-sub-item > ul li:hover{
-    background:rgba(128, 128, 128, 0.13);
+    background:black;
 }
 
 .menu-sub-item > ul li:not(:last-child){
     border-bottom: 1px solid rgba(128, 128, 128, 0.171);
+}
+
+/* Carousel */
+
+#carousel{
+    position: relative;
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+}
+
+.red-layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background: rgba(255, 0, 0, 0.397)
+}
+
+.slides{
+    position: absolute;
+    top: 0;
+    width:100%;
+    height: 100%;
+    max-height: 100%;
+    transition: all .5s ease-out;
+}
+
+#slide1{
+    left: 0;
+    z-index: 3;    
+    background:url('http://www.activistpost.com/wp-content/uploads/2015/12/For_Palestine_by_STiX2000.jpg');
+    background-position: center;    
+}
+
+#slide2{
+    left:100%;
+    background:no-repeat  url('https://www.newstatesman.com/sites/default/files/styles/nodeimage/public/blogs_2015/07/rexfeatures_4216241b.jpg?itok=2ABVm880');
+    background-size:cover;
+    background-position: bottom;
+}
+
+#slide3{
+    left:200%;
+    background:no-repeat url('http://alicewalkersgarden.com/wp-content/uploads/operation-protective-edge-man-stand-in-the-rubbles-of-a-bombed-out-home-child-doll-teddy-bear1.jpg');
+    background-size: cover;
+    background-position: center
+}
+
+.callout{
+    position: absolute;
+    top:100px;
+    left:100px;
+    width:30%;
+    color: white;
+}
+
+.callout h1{
+    font-size: 3em;
+}
+
+.donate-button{
+    color:white;
+    background:red;
+    padding: 8px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#controls{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    bottom:20px;
+    width:100%;
+    z-index: 5;
+}
+
+#controls div {
+	height: 20px;
+	width: 20px;
+	background: white;
+	border-radius: 50%;
+	margin: 0px 5px;
+}
+
+#controls #c1 {
+    background:#ff3450;
+}
+
+#controls div:hover {
+    cursor: pointer;
+    background: aliceblue;
+}
+
+/* Facts section */
+
+#facts{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 190px;
+    width: 100%;
+}
+
+.fact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    line-height: .5em;
+    height: 100%;
+    color:white;
+}
+
+.fact .icon{
+    margin-right: 20px
+}
+
+.fact:nth-child(odd){
+    background:rgba(255, 52, 80, 0.8)
+}
+
+.fact:nth-child(even){
+    background:rgba(40, 103, 222, 0.8)
 }
