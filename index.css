@@ -453,6 +453,7 @@ a{
 
 #facts{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     height: 190px;
@@ -471,6 +472,10 @@ a{
 
 .fact .icon{
     margin-right: 20px
+}
+
+.fact h1 {
+    height: 10px;
 }
 
 .fact:nth-child(odd){
