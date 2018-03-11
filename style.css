@@ -8,6 +8,7 @@
 
 body{
     margin:0;
+    overflow-x: hidden;
 }
 
 ul{
@@ -25,6 +26,10 @@ input{
 a{
     text-decoration: none;
     color: black
+}
+
+img{
+    max-height: 100%;
 }
 
 /* Menu */
@@ -381,20 +386,20 @@ a{
 #slide1{
     left: 0;
     z-index: 3;    
-    background:url('http://www.activistpost.com/wp-content/uploads/2015/12/For_Palestine_by_STiX2000.jpg');
+    background:url('img/flag_child.jpg');
     background-position: center;    
 }
 
 #slide2{
     left:100%;
-    background:no-repeat  url('https://www.newstatesman.com/sites/default/files/styles/nodeimage/public/blogs_2015/07/rexfeatures_4216241b.jpg?itok=2ABVm880');
+    background:no-repeat  url('img/lonely_child.jpg');
     background-size:cover;
     background-position: bottom;
 }
 
 #slide3{
     left:200%;
-    background:no-repeat url('http://alicewalkersgarden.com/wp-content/uploads/operation-protective-edge-man-stand-in-the-rubbles-of-a-bombed-out-home-child-doll-teddy-bear1.jpg');
+    background:no-repeat url('img/red_bear.jpg');
     background-size: cover;
     background-position: center
 }
@@ -515,31 +520,31 @@ a{
     color: rgba(0, 0, 0, 0.479);
 }
 
-/* Recent Cause */
-#recent-cause{
-    padding: 70px 10px;
+/* Sections */
+.section{
+    padding: 70px 0px;
     background:#f3f3f3;
     height: 100%;
 }
 
-#cause-head{
+.section-head{
     text-align: center;
     
 }
 
-#cause-head h1{
+.section-head h1{
     font-weight: lighter;
     font-size: 3em;
     color: grey   
 }
 
-#cause-head #icon{
+.section-head .icon{
     width:  250px;
     margin: auto;
     border: 3px solid #ff3450;;
 }
 
-#cause-head #icon span{
+.section-head .icon span{
     margin-right:40%;
     float: right;
     margin-top: -22px;
@@ -549,11 +554,20 @@ a{
     padding:10px
 }
 
-#cause-body{
+.section-body {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-top: 60px;
+}
+
+
+/* Recent Cause */
+#recent-cause .section-body{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-top: 50px;
-    height: 100%;
 }
 
 .cause{
@@ -602,7 +616,8 @@ a{
 .info{
     display: flex;
     height: 100%;
-    padding: 5px 15px;
+    padding:5px 15px 30px 15px;
+    background: white;
 }
 
 .percentage{
@@ -631,4 +646,151 @@ a{
     position: relative;
     right:6px;
     top: 20px;
+}
+
+/* UPCOMING EVENT */
+#upcoming-events{
+    background: white;
+    padding-bottom: 0 !important;
+}
+
+#upcoming-events .section-body{
+    margin-top: 50px;
+}
+
+#upcoming-events .events-slide{
+    position: absolute;
+    display: flex;
+    width: 100%    
+}
+
+#events-slide1{
+    left: 0%;
+    transition: left .5s ease;
+}
+
+#events-slide2{
+    left: 100%;
+    transition: left .5s ease;    
+}
+
+#events-slide1 .photo{
+    flex: 1;
+    background:no-repeat url('img/two_girls.jpg');
+    background-size: cover;
+    background-position: center
+}
+
+#events-slide2 .photo{
+    flex: 1;
+    background:no-repeat url('img/sheep_child.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-left: 50px
+}
+
+#upcoming-events .text{
+    flex:1;
+    padding: 80px 60px;
+    background: #ff3450;
+    color: white;
+}
+
+#upcoming-events .date{
+    padding-top: 20px;
+}
+
+#upcoming-events .date span:last-child{
+    padding-left: 10px
+}
+
+#upcoming-events .adress{
+    padding-bottom: 40px;
+}
+
+.speakers{
+    background:white;
+    width: 310px;
+    padding: 5px 0 5px 10px;
+    margin-bottom: 80px;
+    margin-top:30px; 
+}
+
+.speaker img{
+    height: 100%;
+    padding: 2px;
+}
+
+.speaker {
+    height: 60px;
+    width: 60px;
+    float:right;
+    margin:0 5px;
+    margin-top: -18px;
+    background: white;
+}
+
+.speakers span{
+    color: #ff3450;
+    font-weight: bold;
+    font-size: .8em
+}
+
+#upcoming-events .actions [href='#join']{
+    padding:8px 12px;
+    margin-right: 20px;
+    border-radius: 3px;
+    background: #2867de;
+    font-weight: bold;
+    font-size: .8em;
+    color: white;
+}
+
+#upcoming-events .actions a *{
+    color:white;
+    margin:auto;
+    margin-right: 3px;
+    font-size: 1.2em;
+}
+
+
+.arrow {
+    position: absolute;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    font-size: 3em;
+    font-weight: bolder;
+    color: white;
+}
+
+#right-arrow{
+    right:20px;
+}
+
+#left-arrow{
+    left:20px;
+}
+
+.arrow span:hover{
+    color: #2867de;
+    cursor: pointer;
+}
+
+/* LATEST BLOGS */
+#latest-blogs .notes .card{
+    display: flex;
+    align-items: center;
+    border-top: 2px solid rgba(128, 128, 128, 0.404);
+    padding: 15px 5px 0px 5px;
+    margin-top: 20px !important;
+}
+
+#latest-blogs .notes .card img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+    background: #2867de;
 }
